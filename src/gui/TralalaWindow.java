@@ -13,8 +13,8 @@ public class TralalaWindow {
 	//Se puede crear un usuario para pasar por parámetros
 	//que coincida con alguno de los ya registrados y nos devuelva "true"
 	//para comprobar que el login es correcto
-	private String email = "sample@gmail.com";
-	private String contraseña = "12345";
+	private String email = "inhaki@gmail.com";
+	private String contraseña = "1234";
 	
 	/* ¿Llamada a varios controllers?
 	 * ¿es posible?
