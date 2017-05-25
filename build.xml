@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="help" name="Tralala_Client_Grupo4">
+	
+	<property environment="env"/>
+	<property name="src.dir" location="src"/>
+   	<property name="bin.dir" location="bin"/>
+	<property name="lib.dir" location="lib"/>
+	<property name="server.port" value="1099"/> 
+	<property name="server.IP" value="127.0.0.1"/> 
+	<property name="server.Name" value="Tralala"/>
+	<property name="policy.file" location="security/java.policy"/>	
+
+    <path id="classpath">
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar"/>
+        </fileset>
+        <pathelement location="${bin.dir}"/>    	
+    </path>
+	
+	<target name="help">
+		<echo>Usage: ant [build | compile | client]</echo>
+	</target>	
+	
+	<target name="build" description="Builds the project">
+			<delete dir="${build.dir}"/>
+			<mkdir dir="${build.dir}"/>
+			<javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="classpath" deprecation="true" fork="true" includeantruntime="false"/>
+	</target>
+	
+	<target name="compile" description="Builds the project">
+		<delete dir="${bin.dir}"/>
+		<mkdir dir="${bin.dir}"/>
+		<javac srcdir="${src.dir}" destdir="${bin.dir}" classpathref="classpath" deprecation="true" fork="true" includeAntRuntime="no" nowarn="true"/>
+    </target>
+
+	<target name="client" description="Runs the Client">
+		<java classname="controller.UsuarioController" classpathref="classpath" fork="true">
+			<jvmarg value="-Djava.security.policy=${policy.file}"/>			
+        	<arg value="${server.IP}"/> 
+	 		<arg value="${server.port}"/> 
+			<arg value="${server.Name}"/> 
+        </java>
+    </target>	
+</project>
