@@ -3,11 +3,11 @@ Copyright (c) 2017 Annonymous: ¿OB, AG, IG & PV?
  **********************************************************************/
 package gui;
 
-import controller.UsuarioController;
+import controller.GestorUsuario;
 
 public class TralalaWindow {
 
-	public UsuarioController uController;
+	public GestorUsuario uController;
 	//añadir los demás controllers
 	
 	//Se puede crear un usuario para pasar por parámetros

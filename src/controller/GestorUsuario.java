@@ -7,13 +7,13 @@ import java.rmi.RemoteException;
 
 import serviceLocator.ServiceLocator;
 
-public class UsuarioController {
+public class GestorUsuario {
 	
 	//se crea un objeto de tipo serviceLocator
 	//ya que, el Controller tiene relación directa con él
 	public ServiceLocator serviceLocator;
 	
-	public UsuarioController(ServiceLocator serviceLocator) {
+	public GestorUsuario(ServiceLocator serviceLocator) {
 		this.serviceLocator = serviceLocator;
 	}
 	

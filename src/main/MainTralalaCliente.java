@@ -3,7 +3,7 @@ Copyright (c) 2017 Annonymous: ¿OB, AG, IG & PV?
  **********************************************************************/
 package main;
 
-import controller.UsuarioController;
+import controller.GestorUsuario;
 import serviceLocator.ServiceLocator;
 import gui.TralalaWindow;
 
@@ -14,7 +14,7 @@ public class MainTralalaCliente {
 		ServiceLocator serviceLocator = new ServiceLocator();
 		serviceLocator.setService(args[0], args[1], args[2]);
 		
-		UsuarioController loginController = new UsuarioController(serviceLocator);
+		GestorUsuario loginController = new GestorUsuario(serviceLocator);
 		//tenemos solo una ventana de interfaz para usuario
 		//y tres controllers... la llamada tendrá que ser a un controller de canciones
 		//se llama al SongController cuando lo creemos para que este muestre las canciones, álbumes y artistas al usuario
